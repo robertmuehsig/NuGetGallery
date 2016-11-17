@@ -329,7 +329,7 @@ namespace NuGetGallery
 
                 await service.SaveFileAsync("theFolderName", "theFileName", CreateFileStream());
 
-                fakeFileSystemService.Verify(x => x.CreateDirectory(FakeConfiguredFileStorageDirectory));
+                fakeFileSystemService.Verify(x => x.CreateDirectory(Path.Combine(FakeConfiguredFileStorageDirectory, "theFolderName")));
             }
 
             [Fact]
